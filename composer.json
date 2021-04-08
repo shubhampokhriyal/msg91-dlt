@@ -1,0 +1,40 @@
+{
+    "name": "shubhampokhriyal/msg91-dlt",
+    "description": "msg91 wrapper with DLT",
+    "type": "package",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "monolog/monolog": "^2.2",
+        "hassankhan/config": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "phpdocumentor/phpdocumentor": "^3.0",
+        "squizlabs/php_codesniffer": "^3.5",
+        "php-parallel-lint/php-parallel-lint": "^1.3",
+        "php-coveralls/php-coveralls": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shubham Pokhriyal",
+            "email": "shubhampokhriyal@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sender\\": "src/Sender"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Sender\\": "tests/Sender"
+        }
+    },
+    "scripts": {
+        "test": [
+            "parallel-lint . --exclude vendor",
+            "phpunit -c phpunit.xml.dist --coverage-clover coverage.xml"
+        ]
+    }
+}
